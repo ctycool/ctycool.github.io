@@ -61,6 +61,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-用gifhub搭建自己的博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/31/用gifhub搭建自己的博客/" class="article-date">
+  <time datetime="2017-12-31T08:10:37.753Z" itemprop="datePublished">2017-12-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="用github创建自己的博客"><a href="#用github创建自己的博客" class="headerlink" title="用github创建自己的博客"></a>用github创建自己的博客</h1><ol>
+<li>先去github建一个自己的项目，这个很简单的，百度搜教程。</li>
+<li>我这里是用hexo搭建博客，为什么用呢，因为环境部署比较简单</li>
+<li>个人不会前端，也不想去折腾，这博客也只是写给自己做笔记的</li>
+<li>安装node.js <a href="http://nodejs.org，安装git" target="_blank" rel="noopener">http://nodejs.org，安装git</a> <a href="http://git-scm.com" target="_blank" rel="noopener">http://git-scm.com</a></li>
+<li>装完上面两个，环境就部署好了。</li>
+<li>创建一个你博客的本地文件，例如你的创建文件是C:\blog</li>
+<li>用管理身份打开git bash客户端</li>
+<li>后面写命令了，不截图了，</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">git version //查看git版本</span><br><span class="line">cd c:  //打开C盘</span><br><span class="line">nmp install hexo-cli -g //安装hexo</span><br><span class="line">npm install hexo --save</span><br><span class="line">hexo -v //查看是hexo版本，是否正常安装</span><br><span class="line">hexo init blog // 初始化blog文件，会生成准备文件</span><br><span class="line">cd blog //进到文件里面去</span><br><span class="line">npm install  //自动安装需要的组件</span><br><span class="line">hexo g //生成文件</span><br><span class="line">hexo s //启动服务</span><br><span class="line">本地浏览器打开http://localhost:4000/可以访问到了</span><br></pre></td></tr></table></figure>
+<p>要更新到github还需要做key，点击查看别人的吧–<a href="http://blog.csdn.net/u3d_ysj/article/details/50525820" target="_blank" rel="noopener">传送门</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">$ ssh-add</span><br><span class="line">Could not open a connection to your authentication agent. --提示这句话，其实是没问题的</span><br><span class="line">然后就可以部署了，部署前记得生成git文件</span><br><span class="line">---npm install hexo-deployer-git --save--</span><br><span class="line">生成后部署</span><br><span class="line">hexo g &amp;&amp; hexo d</span><br><span class="line">到这就差不多完成了，我只写大致的样子，详细自己找资料</span><br><span class="line"></span><br><span class="line">---我也很懒！</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/31/用gifhub搭建自己的博客/" data-id="cjbuhy4q300028gafaaiz85pi" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-github-of-hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/31/github-of-hexo/" class="article-date">
@@ -100,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/31/github-of-hexo/" data-id="cjbuhqdz6000098afkrek4iqw" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/31/github-of-hexo/" data-id="cjbuhy4py00018gafsrq8ulef" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -145,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/30/hello-world/" data-id="cjbuhqdzi000198aflf5yacwz" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/30/hello-world/" data-id="cjbuhy4pm00008gafxjbqtleo" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -184,6 +223,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/12/31/用gifhub搭建自己的博客/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2017/12/31/github-of-hexo/">github of hexo</a>
