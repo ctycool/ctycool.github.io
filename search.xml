@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[用github创建自己的博客]]></title>
+      <title><![CDATA[WebService天气服务]]></title>
       <url>/2018/01/02/WebService%E5%A4%A9%E6%B0%94%E6%9C%8D%E5%8A%A1%EF%BC%8C%E5%8F%8A%E8%87%AA%E5%B7%B1%E7%9A%84/</url>
       <content type="html"><![CDATA[<ol>
 <li>今天用idea做了个webservice获取天气预报信息的</li>
