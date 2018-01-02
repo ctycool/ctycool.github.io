@@ -4,6 +4,21 @@
     
     <entry>
       <title><![CDATA[用github创建自己的博客]]></title>
+      <url>/2018/01/02/WebService%E5%A4%A9%E6%B0%94%E6%9C%8D%E5%8A%A1%EF%BC%8C%E5%8F%8A%E8%87%AA%E5%B7%B1%E7%9A%84/</url>
+      <content type="html"><![CDATA[<ol>
+<li>今天用idea做了个webservice获取天气预报信息的</li>
+<li>用的免费网站是<a href="http://www.webxml.com.cn/" target="_blank" rel="noopener">http://www.webxml.com.cn/</a></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wsimport -s 存放地址 -p 生产package路径   xml地址（wsdl）</span><br><span class="line">wsimport -s D:\A -p weather C:\Users\cool\Desktop\WeatherWS.xml</span><br><span class="line">有时候网页不行只能另存下来的xml生产java源文件了</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">    * 获取代理服务</span><br><span class="line">    * */</span><br><span class="line">    WeatherWS weatherWS =new WeatherWS();</span><br><span class="line">    /*</span><br><span class="line">    * 获取代理的接口</span><br><span class="line">    * */</span><br><span class="line">    WeatherWSSoap weatherWSSoap = weatherWS.getWeatherWSSoap();</span><br><span class="line">    /*</span><br><span class="line">    * 接口获取城市的信息</span><br><span class="line">    * */</span><br><span class="line">    ArrayOfString weather = weatherWSSoap.getWeather(&quot;广州&quot;, &quot;&quot;);</span><br><span class="line">    System.err.println(weather.getString());</span><br><span class="line">    List&lt;String&gt; string = weather.getString();</span><br><span class="line">    //第四个是天气的信息吧了。。</span><br><span class="line">    System.out.println(string.get(4));</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">以service  name为主要，在xml一般就知道这个服务代理是什么，其他也一样。</span><br><span class="line">然后new一个，其他的都好说</span><br><span class="line">&lt;wsdl:service name=&quot;WeatherWS&quot;&gt;&lt;wsdl:documentation&gt; /&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[用github创建自己的博客]]></title>
       <url>/2017/12/31/%E7%94%A8gifhub%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
       <content type="html"><![CDATA[<h1 id="用github创建自己的博客"><a href="#用github创建自己的博客" class="headerlink" title="用github创建自己的博客"></a>用github创建自己的博客</h1><ol>
 <li>先去github建一个自己的项目，这个很简单的，百度搜教程。</li>
