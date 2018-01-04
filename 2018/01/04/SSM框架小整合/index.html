@@ -1,11 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search> 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
   
+
+  
+  <title>SSM框架小整合 | ctycool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="做个笔记吧。。ssm的整合，有时候老不记得配置的一些问题 用idea吧，pom.xml配置一下 顺便告诉你，idea的jsp要加1&amp;lt;%@ page isELIgnored=&amp;quot;false&amp;quot; %&amp;gt;   否则EL表达式会无效。。 pom.xml配置。。配置前最好去 http://mvnrepository.com/看看有没有这些版本。  下面看我的配置123456789">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM框架小整合">
+<meta property="og:url" content="http://yoursite.com/2018/01/04/SSM框架小整合/index.html">
+<meta property="og:site_name" content="ctycool">
+<meta property="og:description" content="做个笔记吧。。ssm的整合，有时候老不记得配置的一些问题 用idea吧，pom.xml配置一下 顺便告诉你，idea的jsp要加1&amp;lt;%@ page isELIgnored=&amp;quot;false&amp;quot; %&amp;gt;   否则EL表达式会无效。。 pom.xml配置。。配置前最好去 http://mvnrepository.com/看看有没有这些版本。  下面看我的配置123456789">
+<meta property="og:updated_time" content="2018-01-04T13:15:21.215Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSM框架小整合">
+<meta name="twitter:description" content="做个笔记吧。。ssm的整合，有时候老不记得配置的一些问题 用idea吧，pom.xml配置一下 顺便告诉你，idea的jsp要加1&amp;lt;%@ page isELIgnored=&amp;quot;false&amp;quot; %&amp;gt;   否则EL表达式会无效。。 pom.xml配置。。配置前最好去 http://mvnrepository.com/看看有没有这些版本。  下面看我的配置123456789">
+  
+    <link rel="alternate" href="/atom.xml" title="ctycool" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ctycool</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">陈土炎的个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-SSM框架小整合" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/04/SSM框架小整合/" class="article-date">
+  <time datetime="2018-01-04T13:13:38.000Z" itemprop="datePublished">2018-01-04</time>
+</a>
     
-    <entry>
-      <title><![CDATA[SSM框架小整合]]></title>
-      <url>/2018/01/04/SSM%E6%A1%86%E6%9E%B6%E5%B0%8F%E6%95%B4%E5%90%88/</url>
-      <content type="html"><![CDATA[<ol>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SSM框架小整合
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
 <li>做个笔记吧。。ssm的整合，有时候老不记得配置的一些问题</li>
 <li>用idea吧，pom.xml配置一下</li>
 <li>顺便告诉你，idea的jsp要加<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page isELIgnored=&quot;false&quot; %&gt;</span><br></pre></td></tr></table></figure>
@@ -21,64 +105,112 @@
 <li>下面看一下web.xml的配置吧</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE web-app PUBLIC</span><br><span class="line"> &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot;</span><br><span class="line"> &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot; &gt;</span><br><span class="line"></span><br><span class="line">&lt;web-app&gt;</span><br><span class="line">  &lt;display-name&gt;Archetype Created Web Application&lt;/display-name&gt;</span><br><span class="line">  &lt;!-- 加载spring容器，注意还需要加载mybatis给spring --&gt;</span><br><span class="line">  &lt;context-param&gt;</span><br><span class="line">    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">    &lt;!--这里的路径看你创建spring-mvc 和mybatis的路径了--&gt;</span><br><span class="line">    &lt;param-value&gt;classpath:spring/spring-*.xml,classpath:mybatis/mybatis-*.xml&lt;/param-value&gt;</span><br><span class="line">  &lt;/context-param&gt;</span><br><span class="line"> </span><br><span class="line">  &lt;!-- 编码过滤器 --&gt;</span><br><span class="line">  &lt;filter&gt;</span><br><span class="line">    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;</span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">      &lt;param-name&gt;encoding&lt;/param-name&gt;</span><br><span class="line">      &lt;param-value&gt;UTF-8&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">  &lt;/filter&gt;</span><br><span class="line">  &lt;filter-mapping&gt;</span><br><span class="line">    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line">  &lt;/filter-mapping&gt;</span><br><span class="line">  &lt;!-- 配置spring的监听器ContextLoaderListener核心类--&gt;</span><br><span class="line">  &lt;listener&gt;</span><br><span class="line">    &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;</span><br><span class="line">  &lt;/listener&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet&gt;</span><br><span class="line">    &lt;servlet-name&gt;cool&lt;/servlet-name&gt;</span><br><span class="line">    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</span><br><span class="line">      &lt;!--加载配置文件进来--&gt;</span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">      &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">      &lt;param-value&gt;classpath:spring/spring-*.xml&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">  &lt;/servlet&gt;</span><br><span class="line">  &lt;servlet-mapping&gt;</span><br><span class="line">    &lt;servlet-name&gt;cool&lt;/servlet-name&gt;</span><br><span class="line">    &lt;url-pattern&gt;*.do&lt;/url-pattern&gt;</span><br><span class="line">  &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">&lt;/web-app&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
+
       
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[WebService天气服务]]></title>
-      <url>/2018/01/02/WebService%E5%A4%A9%E6%B0%94%E6%9C%8D%E5%8A%A1%EF%BC%8C%E5%8F%8A%E8%87%AA%E5%B7%B1%E7%9A%84/</url>
-      <content type="html"><![CDATA[<ol>
-<li>今天用idea做了个webservice获取天气预报信息的</li>
-<li>用的免费网站是<a href="http://www.webxml.com.cn/" target="_blank" rel="noopener">http://www.webxml.com.cn/</a></li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wsimport -s 存放地址 -p 生产package路径   xml地址（wsdl）</span><br><span class="line">wsimport -s D:\A -p weather C:\Users\cool\Desktop\WeatherWS.xml</span><br><span class="line">有时候网页不行只能另存下来的xml生产java源文件了</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">    * 获取代理服务</span><br><span class="line">    * */</span><br><span class="line">    WeatherWS weatherWS =new WeatherWS();</span><br><span class="line">    /*</span><br><span class="line">    * 获取代理的接口</span><br><span class="line">    * */</span><br><span class="line">    WeatherWSSoap weatherWSSoap = weatherWS.getWeatherWSSoap();</span><br><span class="line">    /*</span><br><span class="line">    * 接口获取城市的信息</span><br><span class="line">    * */</span><br><span class="line">    ArrayOfString weather = weatherWSSoap.getWeather(&quot;广州&quot;, &quot;&quot;);</span><br><span class="line">    System.err.println(weather.getString());</span><br><span class="line">    List&lt;String&gt; string = weather.getString();</span><br><span class="line">    //第四个是天气的信息吧了。。</span><br><span class="line">    System.out.println(string.get(4));</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">以service  name为主要，在xml一般就知道这个服务代理是什么，其他也一样。</span><br><span class="line">然后new一个，其他的都好说</span><br><span class="line">&lt;wsdl:service name=&quot;WeatherWS&quot;&gt;&lt;wsdl:documentation&gt; /&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/04/SSM框架小整合/" data-id="cjc0im2je00015kafowijrx3u" class="article-share-link">Teilen</a>
       
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[用github创建自己的博客]]></title>
-      <url>/2017/12/31/%E7%94%A8gifhub%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
-      <content type="html"><![CDATA[<h1 id="用github创建自己的博客"><a href="#用github创建自己的博客" class="headerlink" title="用github创建自己的博客"></a>用github创建自己的博客</h1><ol>
-<li>先去github建一个自己的项目，这个很简单的，百度搜教程。</li>
-<li>我这里是用hexo搭建博客，为什么用呢，因为环境部署比较简单</li>
-<li>个人不会前端，也不想去折腾，这博客也只是写给自己做笔记的</li>
-<li>安装node.js <a href="http://nodejs.org，安装git" target="_blank" rel="noopener">http://nodejs.org，安装git</a> <a href="http://git-scm.com" target="_blank" rel="noopener">http://git-scm.com</a></li>
-<li>装完上面两个，环境就部署好了。</li>
-<li>创建一个你博客的本地文件，例如你的创建文件是C:\blog</li>
-<li>用管理身份打开git bash客户端</li>
-<li>后面写命令了，不截图了，</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">git version //查看git版本</span><br><span class="line">cd c:  //打开C盘</span><br><span class="line">nmp install hexo-cli -g //安装hexo</span><br><span class="line">npm install hexo --save</span><br><span class="line">hexo -v //查看是hexo版本，是否正常安装</span><br><span class="line">hexo init blog // 初始化blog文件，会生成准备文件</span><br><span class="line">cd blog //进到文件里面去</span><br><span class="line">npm install  //自动安装需要的组件</span><br><span class="line">hexo g //生成文件</span><br><span class="line">hexo s //启动服务</span><br><span class="line">本地浏览器打开http://localhost:4000/可以访问到了</span><br></pre></td></tr></table></figure>
-<p>要更新到github还需要做key，点击查看别人的吧–<a href="http://blog.csdn.net/u3d_ysj/article/details/50525820" target="_blank" rel="noopener">传送门</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">$ ssh-add</span><br><span class="line">Could not open a connection to your authentication agent. --提示这句话，其实是没问题的</span><br><span class="line">然后就可以部署了，部署前记得生成git文件</span><br><span class="line">---npm install hexo-deployer-git --save--</span><br><span class="line">生成后部署</span><br><span class="line">hexo g &amp;&amp; hexo d</span><br><span class="line">到这就差不多完成了，我只写大致的样子，详细自己找资料</span><br><span class="line"></span><br><span class="line">后面编辑的话可以用有道云直接编辑，复制到\source\_posts</span><br><span class="line">做一下修改就好了，用上图片，我建议你用七牛云，不过实名认证挺麻烦的。</span><br><span class="line"></span><br><span class="line">---我也很懒！</span><br></pre></td></tr></table></figure>
-]]></content>
       
-        
-    </entry>
+    </footer>
+  </div>
+  
     
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>/2017/12/30/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      
-        
-    </entry>
-    
+<nav id="article-nav">
   
   
-</search>
+    <a href="/2018/01/02/WebService天气服务，及自己的/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">WebService天气服务</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/04/SSM框架小整合/">SSM框架小整合</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/02/WebService天气服务，及自己的/">WebService天气服务</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/31/用gifhub搭建自己的博客/">用github创建自己的博客</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 ctycool<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
