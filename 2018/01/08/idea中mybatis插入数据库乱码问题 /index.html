@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>idea中mybatis插入数据库乱码问题 | ctycool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="mybatis的奇怪问题  今天在idea配置mybatis时候，出现奇怪的问题 插入到数据库中时出现乱码 最后是因为idea 项目项目的那个类的编码不对 搞得在mybatis 的config.xml修改编码也不行 mysql那边的编码也和config.xml一样 下面可以看我xml配置  测试类123456789101112131415161718192021222324252627282930">
+<meta property="og:type" content="article">
+<meta property="og:title" content="idea中mybatis插入数据库乱码问题">
+<meta property="og:url" content="http://yoursite.com/2018/01/08/idea中mybatis插入数据库乱码问题 /index.html">
+<meta property="og:site_name" content="ctycool">
+<meta property="og:description" content="mybatis的奇怪问题  今天在idea配置mybatis时候，出现奇怪的问题 插入到数据库中时出现乱码 最后是因为idea 项目项目的那个类的编码不对 搞得在mybatis 的config.xml修改编码也不行 mysql那边的编码也和config.xml一样 下面可以看我xml配置  测试类123456789101112131415161718192021222324252627282930">
+<meta property="og:updated_time" content="2018-01-08T14:33:22.702Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="idea中mybatis插入数据库乱码问题">
+<meta name="twitter:description" content="mybatis的奇怪问题  今天在idea配置mybatis时候，出现奇怪的问题 插入到数据库中时出现乱码 最后是因为idea 项目项目的那个类的编码不对 搞得在mybatis 的config.xml修改编码也不行 mysql那边的编码也和config.xml一样 下面可以看我xml配置  测试类123456789101112131415161718192021222324252627282930">
+  
+    <link rel="alternate" href="/atom.xml" title="ctycool" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ctycool</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">陈土炎的个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-idea中mybatis插入数据库乱码问题 " class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/08/idea中mybatis插入数据库乱码问题 /" class="article-date">
+  <time datetime="2018-01-08T14:32:43.000Z" itemprop="datePublished">2018-01-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      idea中mybatis插入数据库乱码问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mybatis的奇怪问题</p>
+<ol>
+<li>今天在idea配置mybatis时候，出现奇怪的问题</li>
+<li>插入到数据库中时出现乱码</li>
+<li>最后是因为idea 项目项目的那个类的编码不对</li>
+<li>搞得在mybatis 的config.xml修改编码也不行</li>
+<li>mysql那边的编码也和config.xml一样</li>
+<li>下面可以看我xml配置</li>
+</ol>
+<p>测试类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import org.apache.ibatis.session.SqlSession;</span><br><span class="line">import org.apache.ibatis.session.SqlSessionFactory;</span><br><span class="line">import org.apache.ibatis.session.SqlSessionFactoryBuilder;</span><br><span class="line">import uitl.CityWeather;</span><br><span class="line"></span><br><span class="line">import java.io.InputStream;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String resource = &quot;config.xml&quot;;</span><br><span class="line">        //加载问路径文件</span><br><span class="line">        InputStream is = test.class.getClassLoader().getResourceAsStream(resource);</span><br><span class="line">        System.out.println(test.class.getResource(&quot;config.xml&quot;).getPath()+&quot;----&quot;+is);</span><br><span class="line">        //构建sqlSession的工厂</span><br><span class="line">        SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(is);</span><br><span class="line">        //使用MyBatis提供的Resources类加载mybatis的配置文件（它也加载关联的映射文件）</span><br><span class="line">        //Reader reader = Resources.getResourceAsReader(resource);</span><br><span class="line">        //构建sqlSession的工厂</span><br><span class="line">        //SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(reader);</span><br><span class="line">        //创建能执行映射文件中sql的sqlSession</span><br><span class="line">        SqlSession session = sessionFactory.openSession();</span><br><span class="line">        //实体类</span><br><span class="line">        CityWeather ww=new CityWeather(&quot;城市&quot;,&quot;天气&quot;);</span><br><span class="line">        //插入数据库</span><br><span class="line">        session.insert(&quot;insertWeather&quot;,ww);</span><br><span class="line">        //提交事务</span><br><span class="line">        session.commit();</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>config.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration</span><br><span class="line">        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span><br><span class="line">        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;environments default=&quot;development&quot;&gt;</span><br><span class="line">        &lt;environment id=&quot;development&quot;&gt;</span><br><span class="line">            &lt;transactionManager type=&quot;JDBC&quot;/&gt;</span><br><span class="line">            &lt;dataSource type=&quot;POOLED&quot;&gt;</span><br><span class="line">                &lt;!--这里很驱动改了这个，com.mysql.jdbc.Driver提示过时不让用了--&gt;</span><br><span class="line">                &lt;property name=&quot;driver&quot; value=&quot;com.mysql.cj.jdbc.Driver&quot; /&gt;</span><br><span class="line">                &lt;!--这里配置编码格式serverTimezone=UTC&amp;amp;</span><br><span class="line">                useUnicode=true&amp;amp;characterEncoding=UTF-8 --&gt;</span><br><span class="line">                &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/ssm?serverTimezone=UTC&amp;amp;</span><br><span class="line">                useUnicode=true&amp;amp;characterEncoding=UTF-8 &quot; /&gt;</span><br><span class="line">                &lt;property name=&quot;username&quot; value=&quot;root&quot; /&gt;</span><br><span class="line">                &lt;property name=&quot;password&quot; value=&quot;root&quot; /&gt;</span><br><span class="line">            &lt;/dataSource&gt;</span><br><span class="line">        &lt;/environment&gt;</span><br><span class="line">    &lt;/environments&gt;</span><br><span class="line">    &lt;mappers&gt;</span><br><span class="line">        &lt;mapper  resource=&quot;mapper/mysql.xml&quot;/&gt;</span><br><span class="line">    &lt;/mappers&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+<p>mappers的配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper</span><br><span class="line">        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span><br><span class="line">        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;mapper namespace=&quot;dao.IWeather&quot;&gt;</span><br><span class="line">    &lt;insert id=&quot;insertWeather&quot; parameterType=&quot;dao.IWeather&quot;&gt;</span><br><span class="line">        insert into test(city,weather) values(#&#123;city&#125;,#&#123;wather&#125;)</span><br><span class="line">    &lt;/insert&gt;</span><br><span class="line">   </span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure></p>
+<p>看上面那些没用的，最后在idea的setting&gt;&gt;&gt;file Encoding 查看你的当个类是否编码正确</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/08/idea中mybatis插入数据库乱码问题 /" data-id="cjc6b5uky00028cafwm1jv026" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/04/SSM框架小整合/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SSM框架小整合</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/08/idea中mybatis插入数据库乱码问题 /">idea中mybatis插入数据库乱码问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/04/SSM框架小整合/">SSM框架小整合</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/02/WebService天气服务，及自己的/">WebService天气服务</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/31/用gifhub搭建自己的博客/">用github创建自己的博客</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 ctycool<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
