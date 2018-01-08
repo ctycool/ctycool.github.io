@@ -65,47 +65,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-idea中mybatis插入数据库乱码问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/08/idea中mybatis插入数据库乱码问题/" class="article-date">
-  <time datetime="2018-01-08T14:24:11.957Z" itemprop="datePublished">2018-01-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>title: SSM框架小整合 date: 2018-01-08 22:23:38 tags:</p>
-<p>mybatis的奇怪问题</p>
-<ol>
-<li>今天在idea配置mybatis时候，出现奇怪的问题</li>
-<li>插入到数据库中时出现乱码</li>
-<li>最后是因为idea 项目项目的那个类的编码不对</li>
-<li>搞得在mybatis 的config.xml修改编码也不行</li>
-<li>mysql那边的编码也和config.xml一样</li>
-<li>下面可以看我xml配置</li>
-</ol>
-<p>测试类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import org.apache.ibatis.session.SqlSession;</span><br><span class="line">import org.apache.ibatis.session.SqlSessionFactory;</span><br><span class="line">import org.apache.ibatis.session.SqlSessionFactoryBuilder;</span><br><span class="line">import uitl.CityWeather;</span><br><span class="line"></span><br><span class="line">import java.io.InputStream;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String resource = &quot;config.xml&quot;;</span><br><span class="line">        //加载问路径文件</span><br><span class="line">        InputStream is = test.class.getClassLoader().getResourceAsStream(resource);</span><br><span class="line">        System.out.println(test.class.getResource(&quot;config.xml&quot;).getPath()+&quot;----&quot;+is);</span><br><span class="line">        //构建sqlSession的工厂</span><br><span class="line">        SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(is);</span><br><span class="line">        //使用MyBatis提供的Resources类加载mybatis的配置文件（它也加载关联的映射文件）</span><br><span class="line">        //Reader reader = Resources.getResourceAsReader(resource);</span><br><span class="line">        //构建sqlSession的工厂</span><br><span class="line">        //SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(reader);</span><br><span class="line">        //创建能执行映射文件中sql的sqlSession</span><br><span class="line">        SqlSession session = sessionFactory.openSession();</span><br><span class="line">        //实体类</span><br><span class="line">        CityWeather ww=new CityWeather(&quot;城市&quot;,&quot;天气&quot;);</span><br><span class="line">        //插入数据库</span><br><span class="line">        session.insert(&quot;insertWeather&quot;,ww);</span><br><span class="line">        //提交事务</span><br><span class="line">        session.commit();</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>config.xml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration</span><br><span class="line">        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span><br><span class="line">        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;environments default=&quot;development&quot;&gt;</span><br><span class="line">        &lt;environment id=&quot;development&quot;&gt;</span><br><span class="line">            &lt;transactionManager type=&quot;JDBC&quot;/&gt;</span><br><span class="line">            &lt;dataSource type=&quot;POOLED&quot;&gt;</span><br><span class="line">                &lt;!--这里很驱动改了这个，com.mysql.jdbc.Driver提示过时不让用了--&gt;</span><br><span class="line">                &lt;property name=&quot;driver&quot; value=&quot;com.mysql.cj.jdbc.Driver&quot; /&gt;</span><br><span class="line">                &lt;!--这里配置编码格式serverTimezone=UTC&amp;amp;</span><br><span class="line">                useUnicode=true&amp;amp;characterEncoding=UTF-8 --&gt;</span><br><span class="line">                &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/ssm?serverTimezone=UTC&amp;amp;</span><br><span class="line">                useUnicode=true&amp;amp;characterEncoding=UTF-8 &quot; /&gt;</span><br><span class="line">                &lt;property name=&quot;username&quot; value=&quot;root&quot; /&gt;</span><br><span class="line">                &lt;property name=&quot;password&quot; value=&quot;root&quot; /&gt;</span><br><span class="line">            &lt;/dataSource&gt;</span><br><span class="line">        &lt;/environment&gt;</span><br><span class="line">    &lt;/environments&gt;</span><br><span class="line">    &lt;mappers&gt;</span><br><span class="line">        &lt;mapper  resource=&quot;mapper/mysql.xml&quot;/&gt;</span><br><span class="line">    &lt;/mappers&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
-<p>mappers的配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper</span><br><span class="line">        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span><br><span class="line">        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;mapper namespace=&quot;dao.IWeather&quot;&gt;</span><br><span class="line">    &lt;insert id=&quot;insertWeather&quot; parameterType=&quot;dao.IWeather&quot;&gt;</span><br><span class="line">        insert into test(city,weather) values(#&#123;city&#125;,#&#123;wather&#125;)</span><br><span class="line">    &lt;/insert&gt;</span><br><span class="line">   </span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure></p>
-<p>看上面那些没用的，最后在idea的setting&gt;&gt;&gt;file Encoding 查看你的当个类是否编码正确</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/08/idea中mybatis插入数据库乱码问题/" data-id="cjc6aupnk0004x4af1sfb5s0l" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-SSM框架小整合" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/04/SSM框架小整合/" class="article-date">
@@ -148,7 +107,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/04/SSM框架小整合/" data-id="cjc6aupn00001x4afmt5i8f5f" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/04/SSM框架小整合/" data-id="cjc6az5w50001k0afpv2c1vrz" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -191,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/02/WebService天气服务，及自己的/" data-id="cjc6aupna0002x4afgg1i27nf" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/02/WebService天气服务，及自己的/" data-id="cjc6az5wi0002k0af2qvdln8i" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -240,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/31/用gifhub搭建自己的博客/" data-id="cjc6aupnl0005x4afz6ux3x2w" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/31/用gifhub搭建自己的博客/" data-id="cjc6az5wv0004k0afwnm8y5mq" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -285,7 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/30/hello-world/" data-id="cjc6aupnd0003x4afq15w0c4o" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/30/hello-world/" data-id="cjc6az5ws0003k0afsda16i6c" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -324,10 +283,6 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2018/01/08/idea中mybatis插入数据库乱码问题/">(no title)</a>
-          </li>
         
           <li>
             <a href="/2018/01/04/SSM框架小整合/">SSM框架小整合</a>
