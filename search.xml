@@ -3,8 +3,8 @@
   
     
     <entry>
-      <title><![CDATA[idea中mybatis插入数据库乱码问题]]></title>
-      <url>/2018/01/24/mybatis%E8%87%AA%E4%B8%AA%E6%95%B4%E5%90%88/</url>
+      <title><![CDATA[mybatis自个整合题]]></title>
+      <url>/2018/01/24/mybatis%E8%87%AA%E4%B8%AA%E6%95%B4%E5%90%88%20/</url>
       <content type="html"><![CDATA[<p>jdbc.properties文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jdbc.driver=com.mysql.cj.jdbc.Driver</span><br><span class="line">jdbc.url=jdbc:mysql://localhost:3306/crm?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true </span><br><span class="line">jdbc.username=root</span><br><span class="line">jdbc.password=root</span><br></pre></td></tr></table></figure>
 <p>mappers文件的UserMapper.xml</p>
